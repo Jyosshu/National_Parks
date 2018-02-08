@@ -103,3 +103,6 @@ li a {
 	padding: 5px;
 	text-align: center;
 }
+.error {
+	color: red;
+}

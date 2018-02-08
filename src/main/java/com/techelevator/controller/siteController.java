@@ -39,7 +39,12 @@ public class siteController {
 		
 	}
 	@RequestMapping(path="/parkDetail/{parkCode}",method=RequestMethod.GET)
-	public String showParkDetail(@PathVariable String parkCode, HttpSession session, ModelMap modelHolder){
+	public String showParkDetail(@PathVariable String parkCode, HttpSession session, ModelMap modelHolder) throws NotFoundException{
+		if (parkDao.getParkByParkCode(parkCode) == null) {
+			throw new NotFoundException();
+		}
+			
+		
 		String convert = (String) session.getAttribute("convert");
 		if (convert == null) {
 			convert ="F";

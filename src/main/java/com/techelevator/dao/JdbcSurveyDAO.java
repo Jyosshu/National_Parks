@@ -25,7 +25,7 @@ public class JdbcSurveyDAO implements SurveyDAO {
 	@Override
 	public void saveSurvey(Survey newSurvey) {
 		String sqlSaveSurvey = "INSERT INTO survey_result (parkcode, emailaddress, state, activitylevel) VALUES (?,?,?,?)";
-		jdbcTemplate.update(sqlSaveSurvey, newSurvey.getParkCode(), newSurvey.getEmail(), newSurvey.getState(), newSurvey.getActivityLevel());
+		jdbcTemplate.update(sqlSaveSurvey, newSurvey.getParkCode(), newSurvey.getEmailAddress(), newSurvey.getState(), newSurvey.getActivityLevel());
 
 	}
 

@@ -8,6 +8,7 @@
 		<p>
 		<label for="favoritePark">Favorite National Park</label>
 			<select name="parkCode">
+				<option value="">Please Select a Park</option>
 				<option value="CVNP">Cuyahoga Valley National Park</option>
 				<option value="ENP">Everglades National Park</option>
 				<option value="GCNP">Grand Canyon National Park</option>
@@ -19,12 +20,16 @@
 				<option value="YNP">Yellowstone National Park</option>
 				<option value="YNP2">Yosemite National Park</option>
 			</select>
+			<form:errors path="parkCode" class="error"/>
 		</p>	
-			<p> <label for="email">Your email: </label> 
-				<form:input path="email"/></p>
+			<p> <label for="emailAddress">Your email: </label> 
+				<form:input path="emailAddress"/>
+				<form:errors path="emailAddress" class="error" />
+			</p>
 				
 			<p> <label for="state">State of residence: </label> 	
 			<select name="state">
+				<option value="">Select a State</option>
 				<option value="AL">Alabama</option>
 				<option value="AK">Alaska</option>
 				<option value="AZ">Arizona</option>
@@ -77,6 +82,7 @@
 				<option value="WI">Wisconsin</option>
 				<option value="WY">Wyoming</option>
 			</select>
+			<form:errors path="state" class="error"/>
 			</p>
 			
 			<p>
@@ -84,7 +90,8 @@
 			<input type="radio" name="activityLevel" value="Inactive">Inactive
 			<input type="radio" name="activityLevel" value="Sedentary">Sedentary
 			<input type="radio" name="activityLevel" value="Active">Active
-			<input type="radio" name="activityLevel" value="Extremely Active">Extremely Active
+			<input type="radio" name="activityLevel" value="Extremely Active">Extremely Active 
+			<form:errors path="activityLevel" class="error" />
 			</p>
 			
 			<input type="submit">

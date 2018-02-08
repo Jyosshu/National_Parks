@@ -83,8 +83,12 @@
 				<img src="${weatherImage}" />
 			</div>
 			<div class="currentWeatherInfo">
-				<div class="weatherTemp"> High: <c:out value="${parkWeather[0].high}" /> </div>
-				<div class="weatherTemp"> Low: <c:out value="${parkWeather[0].low}" /> </div>
+				<div class="weatherTemp"> High: <c:out value="${parkWeather[0].high}" />
+					<c:choose> <c:when test="${convert == 'C' }"> C</c:when><c:otherwise> F</c:otherwise></c:choose>
+				</div>
+				<div class="weatherTemp"> Low: <c:out value="${parkWeather[0].low}" /> 
+					<c:choose> <c:when test="${convert == 'C' }"> C</c:when><c:otherwise> F</c:otherwise></c:choose>
+				</div>
 			</div>
 			<c:url var="conversionSubmit" value="/parkDetail/${park.parkCode}" />
 			<form method="post" action="${conversionSubmit }">
@@ -107,8 +111,12 @@
 							<img src="${weatherImage}" />
 						</div>
 						<div class="individualWeatherInfo">
-							<div>  High: <c:out value="${forecastWeather.high}" /> </div>
-							<div> Low: <c:out value="${forecastWeather.low}" /> </div>
+							<div>  High: <c:out value="${forecastWeather.high}" /> 
+								<c:choose> <c:when test="${convert == 'C' }"> C</c:when><c:otherwise> F</c:otherwise></c:choose>
+							</div>
+							<div> Low: <c:out value="${forecastWeather.low}" /> 
+								<c:choose> <c:when test="${convert == 'C' }"> C</c:when><c:otherwise> F</c:otherwise></c:choose>
+							</div>
 						</div>
 					</div>
 				</c:if>

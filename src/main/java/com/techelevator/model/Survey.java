@@ -5,25 +5,26 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class Survey {
 	
-	@NotBlank @Email(message="Not a valid email address")
+	@NotBlank(message="Email is required")
+	@Email(message="Not a valid email address")
 	private String emailAddress;
 	
-	@NotBlank
+	@NotBlank(message="A State must be selected")
 	private String state;
 	
-	@NotBlank
+	@NotBlank(message="Activity Level is required")
 	private String activityLevel;
 	
-	@NotBlank
+	@NotBlank(message="A Park must be selected")
 	private String parkCode;
 	
 
-	public String getEmail() {
+	public String getEmailAddress() {
 		return emailAddress;
 	}
 
-	public void setEmail(String email) {
-		this.emailAddress = email;
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
 	}
 
 	public String getState() {
