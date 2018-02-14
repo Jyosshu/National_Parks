@@ -73,6 +73,11 @@ li a {
 .currentWeatherImage h3 {
 	text-align: center;
 }
+
+.currentWeatherImage  img{
+    width: 150px;
+}
+
 .fourDayWeatherContainer{
 	display: flex;
 	flex:3;
@@ -94,7 +99,7 @@ li a {
 	align-content: flex-end;
 }
 .individualImage img {
-	width: 125px;
+	width: 90px;
 }
 .congratsImage {
 	width: 250px;
